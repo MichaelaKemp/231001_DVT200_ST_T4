@@ -116,19 +116,24 @@
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
-        document.querySelector('form[action="/submit-form"]').addEventListener('submit', function(event) {
-      event.preventDefault(); // Prevent the default form submission behavior
+      document.querySelector('form[action="/submit-form"]').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent default form submission
 
-      // Capture form data using FormData and `event.target`
-      const formData = new FormData(event.target);
+      // Create an object with form data
+      const formData = {
+        name: document.getElementById('name').value,
+        surname: document.getElementById('surname').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value
+      };
 
-      // Send form data to the server using Fetch API
+      // Send form data to the server as JSON
       fetch('/submit-form', {
         method: 'POST',
         headers: {
-          'Accept': 'application/json',
+          'Content-Type': 'application/json', // Set content type to JSON
         },
-        body: formData,
+        body: JSON.stringify(formData), // Convert form data to JSON string
       })
       .then(response => response.text())
       .then(message => {
@@ -138,8 +143,8 @@
         formMessage.classList.add('success');
         formMessage.classList.remove('error');
         formMessage.textContent = 'Form submitted successfully!';
-
-        // Reset the form after submission
+        
+        // Reset the form
         event.target.reset();
       })
       .catch(error => {

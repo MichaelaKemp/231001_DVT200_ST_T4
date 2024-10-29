@@ -1,15 +1,14 @@
 const express = require('express');
 const path = require('path');
-const bodyParser = require('body-parser');
 const mysql = require('mysql');
 require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware to parse form data and JSON
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.json()); // Add this for JSON payloads
+// Middleware to parse JSON data
+app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // for URL-encoded data if needed
 app.use(express.static(path.join(__dirname)));
 
 // Database connection
@@ -25,12 +24,11 @@ db.connect((err) => {
 
 // Handle form submission
 app.post('/submit-form', (req, res) => {
-  console.log("Form data received:", req.body); // Log incoming data
   const { name, surname, email, message } = req.body;
 
-  // Check for null or undefined values
+  // Check if required fields are present
   if (!name || !surname || !email || !message) {
-    console.error("One or more form fields are missing");
+    console.error("Form data is incomplete");
     res.status(400).send("Form data is incomplete.");
     return;
   }
@@ -39,7 +37,7 @@ app.post('/submit-form', (req, res) => {
   const query = 'INSERT INTO feedback (name, surname, email, message) VALUES (?, ?, ?, ?)';
   db.query(query, [name, surname, email, message], (err, result) => {
     if (err) {
-      console.error('Error inserting data:', err);  // Log the full error details
+      console.error('Error inserting data:', err); 
       res.status(500).send('Failed to save the form data.');
       return;
     }
