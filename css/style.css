@@ -254,9 +254,6 @@ a:focus {
 
 .transparent-navbar {
   background-color: transparent;
-  position: absolute; /* Places it above the hero section */
-  width: 100%;
-  z-index: 10;
 }
 
 .do_section {
