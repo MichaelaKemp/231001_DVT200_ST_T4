@@ -59,7 +59,7 @@
 
       <!-- Contact Form -->
       <div class="contact_form">
-        <form action="/submit-form" method="POST">
+        <form id="contact-form" action="/submit-form" method="POST">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" required class="form-control" placeholder="Enter your name">
@@ -132,23 +132,21 @@
         // Display success message
         const formMessage = document.getElementById('form-message');
         formMessage.style.display = 'block';
-        formMessage.classList.add('success');
-        formMessage.classList.remove('error');
+        formMessage.style.color = 'green';
         formMessage.textContent = 'Form submitted successfully!';
     
         // Optionally, reset the form after submission
-        document.getElementById('contact-form').reset();
+        this.reset();
       })
       .catch(error => {
         // Display error message
         const formMessage = document.getElementById('form-message');
         formMessage.style.display = 'block';
-        formMessage.classList.add('error');
-        formMessage.classList.remove('success');
+        formMessage.style.color = 'red';
         formMessage.textContent = 'Failed to submit the form. Please try again later.';
       });
     });
-    </script>    
+  </script>    
 </body>
 
 </html>
