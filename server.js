@@ -2,6 +2,7 @@ const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
 const mysql = require('mysql');
+require('dotenv').config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -23,11 +24,11 @@ db.connect((err) => {
 
 // Handle form submission
 app.post('/submit-form', (req, res) => {
-  const { fullName, phoneNumber, emailAddress, message } = req.body;
+  const { name, surname, email, message } = req.body;
 
   // Insert form data into the database
-  const query = 'INSERT INTO contacts (full_name, phone_number, email, message) VALUES (?, ?, ?, ?)';
-  db.query(query, [fullName, phoneNumber, emailAddress, message], (err, result) => {
+  const query = 'INSERT INTO feedback (name, surname, email, message) VALUES (?, ?, ?, ?)';
+  db.query(query, [name, surname, email, message], (err, result) => {
     if (err) {
       console.error('Error inserting data:', err);  // Log the full error details
       res.status(500).send('Failed to save the form data.');
