@@ -201,6 +201,10 @@ a:focus {
   background-size: 55px;
 }
 
+.transparent-navbar {
+  background-color: transparent !important;
+}
+
 .hero_section {
   height: 90vh;
   display: flex;
@@ -655,20 +659,6 @@ a:focus {
       -ms-flex-pack: center;
           justify-content: center;
 }
-
-.transparent-navbar {
-  background-color: transparent !important;
-  position: absolute;
-  width: 100%;
-  z-index: 10;
-  transition: background-color 0.3s ease; /* Smooth transition if needed */
-}
-
-/* Optional: add background on scroll if desired */
-.transparent-navbar.scrolled {
-  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background on scroll */
-}
-
 
 .footer_section p {
   padding: 20px 65px;
