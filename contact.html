@@ -59,6 +59,7 @@
 
       <!-- Contact Form -->
       <div class="contact_form">
+        <!-- Added id="contact-form" here -->
         <form id="contact-form" action="/submit-form" method="POST">
           <div class="form-group">
             <label for="name">Name</label>
@@ -82,46 +83,19 @@
     </div>
   </section>
 
-  <!-- Contact Information Section -->
-  <section class="contact_info_section layout_padding">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6">
-          <h4>Contact Information</h4>
-          <p>Phone: (+27) 12 345 6789</p>
-          <p>Email: <a href="mailto:info@administrationx.com">info@administrationx.com</a></p>
-        </div>
-        <div class="col-md-6">
-          <h4>Frequently Asked Questions</h4>
-          <ul class="faq_list">
-            <li><strong>How do I get started with a virtual assistant?</strong></li>
-            <p>Simply fill out our contact form, and we’ll get in touch to discuss your requirements.</p>
-            <li><strong>What tasks can a virtual assistant handle for my business?</strong></li>
-            <p>Our virtual assistants can assist with a wide range of tasks including administrative support, customer service, and social media management.</p>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Contact Information Section -->
-
-  <!-- Footer Section -->
-  <section class="container-fluid footer_section">
-    <p>&copy; 2024 Administration X. All Rights Reserved.</p>
-  </section>
-  <!-- End Footer Section -->
-
   <!-- JavaScript Files -->
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+  <!-- JavaScript for Fetch API Form Submission -->
   <script>
     document.getElementById('contact-form').addEventListener('submit', function(event) {
       event.preventDefault(); // Prevent default form submission
-    
+
       // Get form data
       const formData = new FormData(this);
-    
+
       // Send form data to server using Fetch API
       fetch('/submit-form', {
         method: 'POST',
@@ -132,21 +106,23 @@
         // Display success message
         const formMessage = document.getElementById('form-message');
         formMessage.style.display = 'block';
-        formMessage.style.color = 'green';
+        formMessage.classList.add('success');
+        formMessage.classList.remove('error');
         formMessage.textContent = 'Form submitted successfully!';
-    
+        
         // Optionally, reset the form after submission
-        this.reset();
+        document.getElementById('contact-form').reset();
       })
       .catch(error => {
         // Display error message
         const formMessage = document.getElementById('form-message');
         formMessage.style.display = 'block';
-        formMessage.style.color = 'red';
+        formMessage.classList.add('error');
+        formMessage.classList.remove('success');
         formMessage.textContent = 'Failed to submit the form. Please try again later.';
       });
     });
-  </script>    
+  </script>
 </body>
 
 </html>
