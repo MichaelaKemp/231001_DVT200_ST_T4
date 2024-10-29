@@ -78,7 +78,7 @@ body {
 }
 
 /* Dark Overlay */
-.hero_area::before {
+.hero_area .hero_section::before {
   content: "";
   position: absolute;
   top: 0;
@@ -89,7 +89,7 @@ body {
   z-index: 1;
 }
 
-.hero_area * {
+.hero_area .hero_section * {
   position: relative;
   z-index: 2; /* Ensures content appears above the overlay */
 }
@@ -211,17 +211,6 @@ a:focus {
   background-position: center;
   background-repeat: no-repeat;
   position: relative; /* For overlay */
-}
-
-.hero_section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity for desired darkness */
-  z-index: 1;
 }
 
 .hero_section .detail-box {
