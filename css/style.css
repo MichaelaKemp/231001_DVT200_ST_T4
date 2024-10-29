@@ -630,6 +630,22 @@ a:focus {
   margin-top: 5px;
 }
 
+#form-message {
+  padding: 10px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
+#form-message.success {
+  color: #28a745;
+  background-color: #d4edda;
+}
+
+#form-message.error {
+  color: #dc3545;
+  background-color: #f8d7da;
+}
+
 /* footer section*/
 .footer_section {
   background-color: #232323;
