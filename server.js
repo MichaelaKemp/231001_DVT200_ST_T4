@@ -29,7 +29,7 @@ app.post('/submit-form', (req, res) => {
   const query = 'INSERT INTO contacts (full_name, phone_number, email, message) VALUES (?, ?, ?, ?)';
   db.query(query, [fullName, phoneNumber, emailAddress, message], (err, result) => {
     if (err) {
-      console.error('Error inserting data:', err);
+      console.error('Error inserting data:', err);  // Log the full error details
       res.status(500).send('Failed to save the form data.');
       return;
     }
