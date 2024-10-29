@@ -7,8 +7,9 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Middleware to parse form data
+// Middleware to parse form data and JSON
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.json()); // Add this for JSON payloads
 app.use(express.static(path.join(__dirname)));
 
 // Database connection
@@ -24,7 +25,15 @@ db.connect((err) => {
 
 // Handle form submission
 app.post('/submit-form', (req, res) => {
+  console.log("Form data received:", req.body); // Log incoming data
   const { name, surname, email, message } = req.body;
+
+  // Check for null or undefined values
+  if (!name || !surname || !email || !message) {
+    console.error("One or more form fields are missing");
+    res.status(400).send("Form data is incomplete.");
+    return;
+  }
 
   // Insert form data into the database
   const query = 'INSERT INTO feedback (name, surname, email, message) VALUES (?, ?, ?, ?)';

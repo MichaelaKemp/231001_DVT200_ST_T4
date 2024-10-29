@@ -116,38 +116,41 @@
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
   <script>
-    document.querySelector('form[action="/submit-form"]').addEventListener('submit', function(event) {
-   event.preventDefault(); // Prevent the default form submission behavior
+        document.querySelector('form[action="/submit-form"]').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission behavior
 
-   // Capture form data using FormData and `event.target`
-   const formData = new FormData(event.target);
+      // Capture form data using FormData and `event.target`
+      const formData = new FormData(event.target);
 
-   // Send form data to the server using Fetch API
-   fetch('/submit-form', {
-      method: 'POST',
-      body: formData,
-   })
-   .then(response => response.text())
-   .then(message => {
-      // Display success message
-      const formMessage = document.getElementById('form-message');
-      formMessage.style.display = 'block';
-      formMessage.classList.add('success');
-      formMessage.classList.remove('error');
-      formMessage.textContent = 'Form submitted successfully!';
+      // Send form data to the server using Fetch API
+      fetch('/submit-form', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+        },
+        body: formData,
+      })
+      .then(response => response.text())
+      .then(message => {
+        // Display success message
+        const formMessage = document.getElementById('form-message');
+        formMessage.style.display = 'block';
+        formMessage.classList.add('success');
+        formMessage.classList.remove('error');
+        formMessage.textContent = 'Form submitted successfully!';
 
-      // Reset the form after submission
-      event.target.reset();
-   })
-   .catch(error => {
-      // Display error message
-      const formMessage = document.getElementById('form-message');
-      formMessage.style.display = 'block';
-      formMessage.classList.add('error');
-      formMessage.classList.remove('success');
-      formMessage.textContent = 'Failed to submit the form. Please try again later.';
-   });
-});
+        // Reset the form after submission
+        event.target.reset();
+      })
+      .catch(error => {
+        // Display error message
+        const formMessage = document.getElementById('form-message');
+        formMessage.style.display = 'block';
+        formMessage.classList.add('error');
+        formMessage.classList.remove('success');
+        formMessage.textContent = 'Failed to submit the form. Please try again later.';
+      });
+    });
     </script>    
 </body>
 
