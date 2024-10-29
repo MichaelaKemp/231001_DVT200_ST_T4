@@ -638,12 +638,10 @@ a:focus {
 
 #form-message.success {
   color: #28a745;
-  background-color: #d4edda;
 }
 
 #form-message.error {
   color: #dc3545;
-  background-color: #f8d7da;
 }
 
 /* footer section*/
