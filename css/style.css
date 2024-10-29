@@ -78,7 +78,7 @@ body {
 }
 
 /* Dark Overlay */
-.hero_area::before {
+.hero_area {
   content: "";
   position: absolute;
   top: 0;
