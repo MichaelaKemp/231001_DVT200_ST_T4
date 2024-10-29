@@ -203,14 +203,13 @@ a:focus {
   background-size: 55px;
 }
 
-/*end header section*/
 .hero_section {
-  height: 90vh; /* Adjusts height for a full-screen hero */
+  height: 90vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('images/your-hero-background.jpg') center/cover no-repeat;
   color: #ffffff;
+  background-color: #e0e0e0; /* Placeholder background color */
 }
 
 .hero_section .detail-box {

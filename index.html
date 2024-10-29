@@ -76,21 +76,19 @@
     <!-- end header section -->
 
     <!-- Hero section -->
-    <section class="hero_section position-relative">
+    <section class="hero_section position-relative lazy-bg" data-bg="images/hero-image.jpg">
       <div class="container">
         <div class="row">
-          <div class="col">
-            <div class="detail-box">
-              <h2>Welcome to</h2>
-              <h1>Administration X</h1>
-              <p>
-                Professional virtual assistant services tailored to meet your business needs.
-              </p>
-              <div class="">
-                <a href="contact.html">Request a Free Consultation</a>
+            <div class="col">
+              <div class="detail-box">
+                  <h2>Welcome to</h2>
+                  <h1>Administration X</h1>
+                  <p>Professional virtual assistant services tailored to meet your business needs.</p>
+                  <div class="">
+                    <a href="contact.html">Request a Free Consultation</a>
+                  </div>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
@@ -151,7 +149,7 @@
       <div class="row">
         <div class="col-md-5">
           <div class="img-box">
-            <img src="images/how-it-works.jpeg" alt="How It Works Image">
+            <img src="images/how-it-works.jpeg" alt="How It Works Image" loading="lazy">
           </div>
         </div>
         <div class="col-md-7">
@@ -186,28 +184,31 @@
   <script type="text/javascript" src="js/bootstrap.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
-  <!-- owl carousel script 
-    -->
-  <script type="text/javascript">
-    $(".owl-carousel").owlCarousel({
-      loop: true,
-      margin: 0,
-      navText: [],
-      center: true,
-      autoplay: true,
-      autoplayHoverPause: true,
-      responsive: {
-        0: {
-          items: 1
-        },
-        1000: {
-          items: 3
-        }
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+      if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  const element = entry.target;
+                  const imageUrl = element.dataset.bg;
+                  element.style.backgroundImage = `url(${imageUrl})`;
+                  observer.unobserve(element);
+                }
+            });
+          });
+
+          lazyBackgrounds.forEach(bg => observer.observe(bg));
+      } else {
+          // Fallback for browsers without IntersectionObserver support
+          lazyBackgrounds.forEach(bg => {
+            const imageUrl = bg.dataset.bg;
+            bg.style.backgroundImage = `url(${imageUrl})`;
+          });
       }
     });
   </script>
-  <!-- end owl carousel script -->
-
 </body>
 
 </html>

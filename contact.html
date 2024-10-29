@@ -31,8 +31,8 @@
 </head>
 
 <body class="sub_page">
-  <div class="hero_area">
-    <!-- Header section -->
+  <div class="hero_area lazy-bg" data-bg="images/your-subpage-hero-background.jpg">
+    <!-- header section starts -->
     <header class="header_section">
       <div class="container-fluid">
         <nav class="navbar navbar-expand-lg custom_nav-container pt-3">
@@ -42,18 +42,27 @@
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="do.html">Our Services</a></li>
-              <li class="nav-item active"><a class="nav-link" href="contact.html">Contact Us </a></li>
-            </ul>
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav">
+                <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="do.html">Our Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
+              </ul>
+              <div class="user_option">
+                <a href=""><img src="images/user.png" alt=""></a>
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
+            </div>
           </div>
         </nav>
       </div>
     </header>
-    <!-- End Header section -->
+    <!-- end header section -->
   </div>
 
   <!-- Contact Section -->
@@ -166,7 +175,32 @@
         formMessage.textContent = 'Failed to submit the form. Please try again later.';
       });
     });
-    </script>    
+    </script>
+    
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+      const lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+      if ("IntersectionObserver" in window) {
+          const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                  const element = entry.target;
+                  const imageUrl = element.dataset.bg;
+                  element.style.backgroundImage = `url(${imageUrl})`;
+                  observer.unobserve(element);
+                }
+            });
+          });
+
+          lazyBackgrounds.forEach(bg => observer.observe(bg));
+      } else {
+          lazyBackgrounds.forEach(bg => {
+            const imageUrl = bg.dataset.bg;
+            bg.style.backgroundImage = `url(${imageUrl})`;
+          });
+      }
+    });
+    </script>
 </body>
 
 </html>
