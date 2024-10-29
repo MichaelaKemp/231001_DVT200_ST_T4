@@ -201,10 +201,6 @@ a:focus {
   background-size: 55px;
 }
 
-.transparent-navbar {
-  background-color: transparent !important;
-}
-
 .hero_section {
   height: 90vh;
   display: flex;
