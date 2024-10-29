@@ -72,13 +72,12 @@ body {
 .hero_area {
   position: relative; /* Needed for positioning the overlay */
   height: 100vh;
-  background-color: #b5caee;
   background-size: cover;
   background-position: center;
 }
 
 /* Dark Overlay */
-.hero_area .hero_section::before {
+.hero_area::before {
   content: "";
   position: absolute;
   top: 0;
@@ -89,7 +88,23 @@ body {
   z-index: 1;
 }
 
-.hero_area .hero_section * {
+.hero_area * {
+  position: relative;
+  z-index: 2; /* Ensures content appears above the overlay */
+}
+
+.hero_section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity for desired darkness */
+  z-index: 1;
+}
+
+.hero_section * {
   position: relative;
   z-index: 2; /* Ensures content appears above the overlay */
 }
