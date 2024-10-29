@@ -207,7 +207,10 @@ a:focus {
   align-items: center;
   justify-content: center;
   color: #ffffff;
-  background-color: #e0e0e0; /* Placeholder background color */
+  background-size: cover; /* Ensures the full section is covered */
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative; /* For overlay */
 }
 
 .hero_section .detail-box {
@@ -652,6 +655,20 @@ a:focus {
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+.transparent-navbar {
+  background-color: transparent !important;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  transition: background-color 0.3s ease; /* Smooth transition if needed */
+}
+
+/* Optional: add background on scroll if desired */
+.transparent-navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background on scroll */
+}
+
 
 .footer_section p {
   padding: 20px 65px;
