@@ -73,7 +73,6 @@ body {
   position: relative; /* Needed for positioning the overlay */
   height: 100vh;
   background-color: #b5caee;
-  background-image: url(../images/hero-image.jpeg);
   background-size: cover;
   background-position: center;
 }
@@ -199,7 +198,6 @@ a:focus {
 }
 
 .custom_nav-container .navbar-toggler .navbar-toggler-icon {
-  background-image: url(../images/menu.png);
   background-size: 55px;
 }
 
