@@ -668,5 +668,130 @@ a:focus {
   color: #fbfcfd;
 }
 
-/* end footer section*/
-/*# sourceMappingURL=style.css.map */
+@media (max-width: 768px) {
+  .layout_padding {
+    padding: 30px 0;
+  }
+
+  .layout_padding2 {
+    padding: 25px 0;
+  }
+
+  .heading_container h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero_section .detail-box h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero_section .detail-box h2 {
+    font-size: 1.25rem;
+  }
+
+  .hero_section .detail-box p {
+    font-size: 0.9rem;
+  }
+
+  .hero_section .detail-box a {
+    padding: 8px 30px;
+  }
+
+  .do_section .do_container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .do_section .do_container .box {
+    width: 100%;
+  }
+
+  .team_section .team_member {
+    flex: 0 1 100%;
+  }
+
+  .team_section .img-box {
+    width: 120px;
+    height: 120px;
+  }
+
+  .contact_form .cta-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout_padding {
+    padding: 20px 0;
+  }
+
+  .hero_section {
+    height: auto;
+    padding: 20px;
+  }
+
+  .hero_section .detail-box h1 {
+    font-size: 2rem;
+  }
+
+  .hero_section .detail-box h2 {
+    font-size: 1rem;
+  }
+
+  .hero_section .detail-box p {
+    font-size: 0.8rem;
+  }
+
+  .hero_section .detail-box a {
+    padding: 5px 20px;
+    font-size: 0.8rem;
+  }
+
+  .do_section h2 {
+    font-size: 1.5rem;
+  }
+
+  .do_section .do_container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .team_section .img-box {
+    width: 100px;
+    height: 100px;
+  }
+
+  .contact_section .heading_container h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact_form .cta-button {
+    width: 100%;
+    padding: 10px;
+  }
+}
+
+/* Footer Adjustments */
+.footer_section p {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+}
+
+/* Navbar Adjustments */
+.custom_nav-container .navbar-nav .nav-link {
+  margin: 5px 15px;
+}
+
+/* FAQ List Adjustments */
+.faq_list li {
+  font-size: 0.9rem;
+}
+
+/* Contact Info Adjustments */
+.contact_info_section h4 {
+  font-size: 1.25rem;
+}
+
+.contact_info_section p {
+  font-size: 0.8rem;
+}
