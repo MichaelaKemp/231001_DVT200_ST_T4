@@ -805,7 +805,7 @@ a:focus {
     /* Hero Section for Phones */
     .hero_area {
       height: 100vh !important;
-      background: url('/images/hero-image.jpg') no-repeat center center/cover !important;
+      background: url('../images/hero-image.jpg') no-repeat center center/cover !important;
       background-size: cover !important;
     }
   
