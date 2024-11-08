@@ -801,7 +801,6 @@ a:focus {
     .hero_area {
       height: 100vh;
       background: url('../images/hero-image.jpg') no-repeat center center/cover;
-      background-color: #000; /* Fallback color */
     }
   
     .hero_section {
@@ -833,7 +832,7 @@ a:focus {
       width: 100%;
       height: auto;
       margin: 0 auto;
-      margin-left: 20px;
+      margin-left: 70px;
       margin-bottom: 20px;
     }
   
