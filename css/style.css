@@ -833,6 +833,8 @@ a:focus {
       width: 100%;
       height: auto;
       margin: 0 auto;
+      margin-left: 20px;
+      margin-bottom: 20px;
     }
   
     .do_section h2 {
