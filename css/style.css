@@ -793,78 +793,68 @@ a:focus {
 }
 
 @media (max-width: 480px) {
-  .layout_padding {
-    padding: 20px 0;
-  }
-
-  .hero_section {
-    height: auto;
-    padding: 20px;
-  }
-
-  .hero_section .detail-box h1 {
-    font-size: 2rem;
-  }
-
-  .hero_section .detail-box h2 {
-    font-size: 1.2rem;
-  }
-
-  .hero_section .detail-box p {
-    font-size: 0.85rem;
-    padding: 0 10px;
-  }
-
-  .hero_section .detail-box a {
-    padding: 10px 25px;
-    font-size: 0.9rem;
-  }
-
-  .do_section h2 {
-    font-size: 1.5rem;
-  }
-
-  .do_section .do_container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .team_section .img-box {
-    width: 100px;
-    height: 100px;
-  }
-
-  .contact_section .heading_container h2 {
-    font-size: 1.5rem;
-  }
-
-  .contact_form .cta-button {
-    width: 100%;
-    padding: 10px;
-  }
-}
-
-/* Footer Adjustments */
-.footer_section p {
-  padding: 10px 20px;
-  font-size: 0.8rem;
-}
-
-/* Navbar Adjustments */
-.custom_nav-container .navbar-nav .nav-link {
-  margin: 5px 15px;
-}
-
-/* FAQ List Adjustments */
-.faq_list li {
-  font-size: 0.9rem;
-}
-
-/* Contact Info Adjustments */
-.contact_info_section h4 {
-  font-size: 1.25rem;
-}
-
-.contact_info_section p {
-  font-size: 0.8rem;
-}
+    .layout_padding {
+      padding: 20px 0;
+    }
+  
+    /* Hero Section for Phones */
+    .hero_area {
+      height: 100vh;
+      background: url('../images/hero-image.jpg') no-repeat center center/cover;
+      background-color: #000; /* Fallback color */
+    }
+  
+    .hero_section {
+      height: auto;
+      padding: 20px;
+    }
+  
+    .hero_section .detail-box h1 {
+      font-size: 2rem;
+    }
+  
+    .hero_section .detail-box h2 {
+      font-size: 1.2rem;
+    }
+  
+    .hero_section .detail-box p {
+      font-size: 0.85rem;
+      padding: 0 10px;
+    }
+  
+    .hero_section .detail-box a {
+      padding: 10px 25px;
+      font-size: 0.9rem;
+    }
+  
+    /* How It Works Section */
+    .how_it_works_section .img-box img {
+      max-width: 250px;
+      width: 100%;
+      height: auto;
+      margin: 0 auto;
+    }
+  
+    .do_section h2 {
+      font-size: 1.5rem;
+    }
+  
+    .do_section .do_container {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    .team_section .img-box {
+      width: 100px;
+      height: 100px;
+    }
+  
+    .contact_section .heading_container h2 {
+      font-size: 1.5rem;
+    }
+  
+    .contact_form .cta-button {
+      width: 100%;
+      padding: 10px;
+    }
+  }  
