@@ -790,6 +790,11 @@ a:focus {
   .contact_form .cta-button {
     width: 100%;
   }
+
+  .footer_section p {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -799,8 +804,9 @@ a:focus {
   
     /* Hero Section for Phones */
     .hero_area {
-      height: 100vh;
-      background: url('../images/hero-image.jpg') no-repeat center center/cover;
+      height: 100vh !important;
+      background: url('/images/hero-image.jpg') no-repeat center center/cover !important;
+      background-size: cover !important;
     }
   
     .hero_section {
@@ -857,5 +863,9 @@ a:focus {
     .contact_form .cta-button {
       width: 100%;
       padding: 10px;
+    }
+
+    .footer_section p {
+      font-size: 0.75rem;
     }
   }  
