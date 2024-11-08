@@ -39,23 +39,24 @@
           <a class="navbar-brand" href="index.html">
             <span>Administration X</span>
           </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
+    
+          <!-- Burger Menu Icon for Mobile -->
+          <button class="navbar-toggler" type="button" id="burger-menu">
+            &#9776; <!-- Burger icon -->
           </button>
-
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
-              <ul class="navbar-nav">
-                <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="do.html">Our Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact us</a></li>
-              </ul>
-            </div>
+    
+          <!-- Navbar Links -->
+          <div class="navbar-links" id="navbar-links">
+            <ul class="navbar-nav">
+              <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+              <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+              <li class="nav-item"><a class="nav-link" href="do.html">Our Services</a></li>
+              <li class="nav-item active"><a class="nav-link" href="contact.html">Contact us</a></li>
+            </ul>
           </div>
         </nav>
       </div>
-    </header>
+    </header>    
     <!-- end header section -->
   </div>
 
@@ -172,28 +173,41 @@
     </script>
     
     <script>
-      document.addEventListener("DOMContentLoaded", function () {
-      const lazyBackgrounds = document.querySelectorAll(".lazy-bg");
-      if ("IntersectionObserver" in window) {
-          const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                  const element = entry.target;
-                  const imageUrl = element.dataset.bg;
-                  element.style.backgroundImage = `url(${imageUrl})`;
-                  observer.unobserve(element);
-                }
-            });
-          });
+      document.addEventListener("DOMContentLoaded", () => {
+  // Burger Menu Toggle
+  const burgerMenu = document.querySelector('.burger-menu');
+  const menuContent = document.querySelector('.burger-menu-content');
 
-          lazyBackgrounds.forEach(bg => observer.observe(bg));
-      } else {
-          lazyBackgrounds.forEach(bg => {
-            const imageUrl = bg.dataset.bg;
-            bg.style.backgroundImage = `url(${imageUrl})`;
-          });
-      }
+  if (burgerMenu && menuContent) {
+    burgerMenu.addEventListener('click', () => {
+      menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
     });
+  }
+
+  // Lazy Loading for Background Images
+  const lazyBackgrounds = document.querySelectorAll(".lazy-bg");
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const element = entry.target;
+          const imageUrl = element.dataset.bg;
+          element.style.backgroundImage = `url(${imageUrl})`;
+          observer.unobserve(element);
+        }
+      });
+    });
+
+    lazyBackgrounds.forEach(bg => observer.observe(bg));
+  } else {
+    // Fallback for browsers without IntersectionObserver support
+    lazyBackgrounds.forEach(bg => {
+      const imageUrl = bg.dataset.bg;
+      bg.style.backgroundImage = `url(${imageUrl})`;
+    });
+  }
+});
     </script>
 </body>
 
