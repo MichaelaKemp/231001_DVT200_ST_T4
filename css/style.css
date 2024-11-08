@@ -668,113 +668,118 @@ a:focus {
   color: #fbfcfd;
 }
 
+/* Mobile Styles (max-width: 768px) */
 @media (max-width: 768px) {
-  .layout_padding {
-    padding: 20px 0;
-  }
-
-  /* Burger Menu */
-  .custom_nav-container .navbar-toggler {
-    display: block;
-  }
-
-  .navbar-links {
-    display: none;
-  }
-
-  .navbar-links.show {
-    display: block;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: #353434;
-    padding: 10px 0;
+  /* Navbar Adjustments */
+  .navbar-brand {
     text-align: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
   }
 
-  .navbar-links a {
-    color: #ffffff;
-    padding: 10px 0;
-    display: block;
+  .navbar-toggler {
+    position: absolute;
+    right: 15px;
+    top: 10px;
   }
 
   /* Hero Section */
   .hero_section {
+    padding: 20px 10px;
     height: auto;
-    padding: 20px;
     text-align: center;
   }
 
   .hero_section .detail-box h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
   }
 
   .hero_section .detail-box h2 {
     font-size: 1.2rem;
+    margin-bottom: 10px;
   }
 
   .hero_section .detail-box p {
     font-size: 0.9rem;
+    margin-bottom: 15px;
   }
 
   .hero_section .detail-box a {
+    padding: 10px 40px;
+    font-size: 1rem;
+  }
+
+  /* Services Section */
+  .do_section .do_container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .do_section .box {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .do_section .detail-box h6 {
+    font-size: 1rem;
+  }
+
+  .do_section .detail-box p {
+    font-size: 0.85rem;
+  }
+
+  /* How It Works Section */
+  .how_it_works_section .row {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .how_it_works_section .img-box {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 20px;
+  }
+
+  .how_it_works_section .detail-box {
+    text-align: center;
+    margin: 0;
+  }
+
+  .how_it_works_section .steps-list {
+    padding-left: 0;
+  }
+
+  .how_it_works_section .steps-list li {
+    font-size: 0.9rem;
+  }
+
+  .how_it_works_section .detail-box a {
     padding: 10px 30px;
     font-size: 0.9rem;
   }
 
-  /* Service Section */
-  .do_section .do_container {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .do_section .do_container .box {
-    width: 100%;
-  }
-
-  .do_section h2 {
-    font-size: 1.5rem;
-  }
-
-  /* How It Works Section */
-  .how_it_works_section .img-box img {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-  }
-
-  .how_it_works_section .detail-box {
-    margin-left: 0;
-    text-align: center;
-  }
-
-  /* Team Section */
-  .team_section .team_member {
-    flex: 0 1 100%;
-    margin-bottom: 20px;
-  }
-
-  .team_section .img-box {
-    width: 120px;
-    height: 120px;
-  }
-
-  /* Contact Form */
-  .contact_form .cta-button {
-    width: 100%;
-  }
-
-  /* Footer Section */
+  /* Footer Adjustments */
   .footer_section p {
-    padding: 10px 20px;
     font-size: 0.8rem;
+    padding: 10px;
   }
 }
 
+/* Extra Small Screens (max-width: 480px) */
 @media (max-width: 480px) {
-  .layout_padding {
-    padding: 15px 0;
+  /* Navbar */
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+
+  .navbar-toggler {
+    font-size: 1.2rem;
+  }
+
+  /* Hero Section */
+  .hero_section {
+    padding: 15px 10px;
   }
 
   .hero_section .detail-box h1 {
@@ -786,34 +791,34 @@ a:focus {
   }
 
   .hero_section .detail-box p {
-    font-size: 0.85rem;
-    padding: 0 15px;
+    font-size: 0.8rem;
   }
 
-  .do_section .do_container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
+  /* Services Section */
   .do_section h2 {
     font-size: 1.3rem;
   }
 
-  .team_section .img-box {
-    width: 100px;
-    height: 100px;
-  }
-
-  .contact_section .heading_container h2 {
-    font-size: 1.3rem;
-  }
-
-  .contact_form .cta-button {
+  .do_section .box {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
   }
 
-  .footer_section p {
+  .do_section .detail-box h6 {
+    font-size: 0.9rem;
+  }
+
+  .do_section .detail-box p {
     font-size: 0.75rem;
+  }
+
+  /* How It Works Section */
+  .how_it_works_section .img-box {
+    max-width: 250px;
+  }
+
+  .how_it_works_section .detail-box a {
+    padding: 8px 25px;
+    font-size: 0.8rem;
   }
 }
