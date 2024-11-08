@@ -170,13 +170,16 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
   <script>
-    document.addEventListener("DOMContentLoaded", () => {
-  const burgerMenu = document.getElementById("burger-menu");
-  const navbarLinks = document.getElementById("navbar-links");
+     document.addEventListener("DOMContentLoaded", () => {
+  // Burger Menu Toggle
+  const burgerMenu = document.querySelector('.burger-menu');
+  const menuContent = document.querySelector('.burger-menu-content');
 
-  burgerMenu.addEventListener("click", () => {
-    navbarLinks.classList.toggle("show");
-  });
+  if (burgerMenu && menuContent) {
+    burgerMenu.addEventListener('click', () => {
+      menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
+    });
+  }
 
   // Lazy Loading for Background Images
   const lazyBackgrounds = document.querySelectorAll(".lazy-bg");
