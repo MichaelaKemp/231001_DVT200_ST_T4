@@ -171,15 +171,12 @@
   </script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-  // Burger Menu Toggle
-  const burgerMenu = document.querySelector('.burger-menu');
-  const menuContent = document.querySelector('.burger-menu-content');
+  const burgerMenu = document.getElementById("burger-menu");
+  const navbarLinks = document.getElementById("navbar-links");
 
-  if (burgerMenu && menuContent) {
-    burgerMenu.addEventListener('click', () => {
-      menuContent.style.display = menuContent.style.display === 'block' ? 'none' : 'block';
-    });
-  }
+  burgerMenu.addEventListener("click", () => {
+    navbarLinks.classList.toggle("show");
+  });
 
   // Lazy Loading for Background Images
   const lazyBackgrounds = document.querySelectorAll(".lazy-bg");

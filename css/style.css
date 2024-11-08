@@ -670,126 +670,40 @@ a:focus {
 
 @media (max-width: 768px) {
   .layout_padding {
-    padding: 30px 0;
+    padding: 20px 0;
   }
 
-  .layout_padding2 {
-    padding: 25px 0;
-  }
-
-  .custom_nav-container .navbar-nav {
-    display: none; /* Hide default navbar links */
-  }
-
-  .custom_nav-container .burger-menu {
+  /* Burger Menu */
+  .custom_nav-container .navbar-toggler {
     display: block;
-    cursor: pointer;
-    font-size: 1.5rem;
-    color: #ffffff;
-    padding: 10px;
-    position: relative;
-    z-index: 1000;
   }
 
-  .burger-menu-content {
+  .navbar-links {
     display: none;
+  }
+
+  .navbar-links.show {
+    display: block;
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     background-color: #353434;
+    padding: 10px 0;
     text-align: center;
-    padding: 10px 0;
   }
 
-  .burger-menu-content a {
-    display: block;
+  .navbar-links a {
     color: #ffffff;
-    text-decoration: none;
     padding: 10px 0;
+    display: block;
   }
 
-  .burger-menu-content a:hover {
-    background-color: #444444;
-  }
-
-  .hero_area {
-    position: relative;
-    height: 100vh;
-    background: url('../images/hero-image.jpg') no-repeat center center/cover;
-    background-color: #b5caee; /* Fallback color */
-  }
-  
-  .hero_area::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    z-index: 1;
-  }
-  
-  .how_it_works_section .img-box img {
-    width: 100%;
-    max-width: 400px;
-    height: auto;
-    border-radius: 5px;
-    margin: 0 auto;
-  }  
-
-  .heading_container h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero_section .detail-box h1 {
-    font-size: 2.5rem;
-  }
-
-  .hero_section .detail-box h2 {
-    font-size: 1.25rem;
-  }
-
-  .hero_section .detail-box p {
-    font-size: 0.9rem;
-  }
-
-  .hero_section .detail-box a {
-    padding: 8px 30px;
-  }
-
-  .do_section .do_container {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .do_section .do_container .box {
-    width: 100%;
-  }
-
-  .team_section .team_member {
-    flex: 0 1 100%;
-  }
-
-  .team_section .img-box {
-    width: 120px;
-    height: 120px;
-  }
-
-  .contact_form .cta-button {
-    width: 100%;
-  }
-}
-
-@media (max-width: 480px) {
-  .layout_padding {
-    padding: 20px 0;
-  }
-
+  /* Hero Section */
   .hero_section {
     height: auto;
     padding: 20px;
+    text-align: center;
   }
 
   .hero_section .detail-box h1 {
@@ -801,22 +715,88 @@ a:focus {
   }
 
   .hero_section .detail-box p {
-    font-size: 0.85rem;
-    padding: 0 10px;
+    font-size: 0.9rem;
   }
 
   .hero_section .detail-box a {
-    padding: 10px 25px;
+    padding: 10px 30px;
     font-size: 0.9rem;
+  }
+
+  /* Service Section */
+  .do_section .do_container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .do_section .do_container .box {
+    width: 100%;
   }
 
   .do_section h2 {
     font-size: 1.5rem;
   }
 
+  /* How It Works Section */
+  .how_it_works_section .img-box img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .how_it_works_section .detail-box {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  /* Team Section */
+  .team_section .team_member {
+    flex: 0 1 100%;
+    margin-bottom: 20px;
+  }
+
+  .team_section .img-box {
+    width: 120px;
+    height: 120px;
+  }
+
+  /* Contact Form */
+  .contact_form .cta-button {
+    width: 100%;
+  }
+
+  /* Footer Section */
+  .footer_section p {
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout_padding {
+    padding: 15px 0;
+  }
+
+  .hero_section .detail-box h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero_section .detail-box h2 {
+    font-size: 1rem;
+  }
+
+  .hero_section .detail-box p {
+    font-size: 0.85rem;
+    padding: 0 15px;
+  }
+
   .do_section .do_container {
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
+  }
+
+  .do_section h2 {
+    font-size: 1.3rem;
   }
 
   .team_section .img-box {
@@ -825,36 +805,15 @@ a:focus {
   }
 
   .contact_section .heading_container h2 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .contact_form .cta-button {
     width: 100%;
-    padding: 10px;
+    padding: 8px;
   }
-}
 
-/* Footer Adjustments */
-.footer_section p {
-  padding: 10px 20px;
-  font-size: 0.8rem;
-}
-
-/* Navbar Adjustments */
-.custom_nav-container .navbar-nav .nav-link {
-  margin: 5px 15px;
-}
-
-/* FAQ List Adjustments */
-.faq_list li {
-  font-size: 0.9rem;
-}
-
-/* Contact Info Adjustments */
-.contact_info_section h4 {
-  font-size: 1.25rem;
-}
-
-.contact_info_section p {
-  font-size: 0.8rem;
+  .footer_section p {
+    font-size: 0.75rem;
+  }
 }
