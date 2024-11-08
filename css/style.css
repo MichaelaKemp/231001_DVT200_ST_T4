@@ -668,157 +668,203 @@ a:focus {
   color: #fbfcfd;
 }
 
-/* Mobile Styles (max-width: 768px) */
 @media (max-width: 768px) {
-  /* Navbar Adjustments */
-  .navbar-brand {
+  .layout_padding {
+    padding: 30px 0;
+  }
+
+  .layout_padding2 {
+    padding: 25px 0;
+  }
+
+  .custom_nav-container .navbar-nav {
+    display: none; /* Hide default navbar links */
+  }
+
+  .custom_nav-container .burger-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: 10px;
+    position: relative;
+    z-index: 1000;
+  }
+
+  .burger-menu-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #353434;
     text-align: center;
+    padding: 10px 0;
+  }
+
+  .burger-menu-content a {
+    display: block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 0;
+  }
+
+  .burger-menu-content a:hover {
+    background-color: #444444;
+  }
+
+  /* Hero Area */
+  .hero_area {
+    position: relative;
+    height: 100vh;
+    background: url('../images/hero-image.jpg') no-repeat center center/cover;
+  }
+
+  .hero_area::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1;
+  }
+
+  /* Set White Background for All Other Sections */
+  body,
+  .do_section,
+  .how_it_works_section,
+  .team_section,
+  .contact_section,
+  .footer_section {
+    background-color: #ffffff;
+  }
+
+  .how_it_works_section .img-box img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 5px;
     margin: 0 auto;
+  }
+
+  .heading_container h2 {
     font-size: 1.5rem;
   }
 
-  .navbar-toggler {
-    position: absolute;
-    right: 15px;
-    top: 10px;
-  }
-
-  /* Hero Section */
-  .hero_section {
-    padding: 20px 10px;
-    height: auto;
-    text-align: center;
-  }
-
   .hero_section .detail-box h1 {
-    font-size: 2.2rem;
-    margin-bottom: 10px;
+    font-size: 2.5rem;
   }
 
   .hero_section .detail-box h2 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+    font-size: 1.25rem;
   }
 
   .hero_section .detail-box p {
     font-size: 0.9rem;
-    margin-bottom: 15px;
   }
 
   .hero_section .detail-box a {
-    padding: 10px 40px;
-    font-size: 1rem;
+    padding: 8px 30px;
   }
 
-  /* Services Section */
   .do_section .do_container {
     flex-direction: column;
     gap: 20px;
   }
 
-  .do_section .box {
+  .do_section .do_container .box {
     width: 100%;
-    margin: 0 auto;
   }
 
-  .do_section .detail-box h6 {
-    font-size: 1rem;
+  .team_section .team_member {
+    flex: 0 1 100%;
   }
 
-  .do_section .detail-box p {
-    font-size: 0.85rem;
+  .team_section .img-box {
+    width: 120px;
+    height: 120px;
   }
 
-  /* How It Works Section */
-  .how_it_works_section .row {
-    flex-direction: column;
+  .contact_form .cta-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .layout_padding {
+    padding: 20px 0;
+  }
+
+  .hero_section {
+    height: auto;
     padding: 20px;
   }
 
-  .how_it_works_section .img-box {
+  .hero_section .detail-box h1 {
+    font-size: 2rem;
+  }
+
+  .hero_section .detail-box h2 {
+    font-size: 1.2rem;
+  }
+
+  .hero_section .detail-box p {
+    font-size: 0.85rem;
+    padding: 0 10px;
+  }
+
+  .hero_section .detail-box a {
+    padding: 10px 25px;
+    font-size: 0.9rem;
+  }
+
+  .do_section h2 {
+    font-size: 1.5rem;
+  }
+
+  .do_section .do_container {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .team_section .img-box {
+    width: 100px;
+    height: 100px;
+  }
+
+  .contact_section .heading_container h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact_form .cta-button {
     width: 100%;
-    max-width: 300px;
-    margin: 0 auto 20px;
-  }
-
-  .how_it_works_section .detail-box {
-    text-align: center;
-    margin: 0;
-  }
-
-  .how_it_works_section .steps-list {
-    padding-left: 0;
-  }
-
-  .how_it_works_section .steps-list li {
-    font-size: 0.9rem;
-  }
-
-  .how_it_works_section .detail-box a {
-    padding: 10px 30px;
-    font-size: 0.9rem;
-  }
-
-  /* Footer Adjustments */
-  .footer_section p {
-    font-size: 0.8rem;
     padding: 10px;
   }
 }
 
-/* Extra Small Screens (max-width: 480px) */
-@media (max-width: 480px) {
-  /* Navbar */
-  .navbar-brand {
-    font-size: 1.2rem;
-  }
+/* Footer Adjustments */
+.footer_section p {
+  padding: 10px 20px;
+  font-size: 0.8rem;
+}
 
-  .navbar-toggler {
-    font-size: 1.2rem;
-  }
+/* Navbar Adjustments */
+.custom_nav-container .navbar-nav .nav-link {
+  margin: 5px 15px;
+}
 
-  /* Hero Section */
-  .hero_section {
-    padding: 15px 10px;
-  }
+/* FAQ List Adjustments */
+.faq_list li {
+  font-size: 0.9rem;
+}
 
-  .hero_section .detail-box h1 {
-    font-size: 1.8rem;
-  }
+/* Contact Info Adjustments */
+.contact_info_section h4 {
+  font-size: 1.25rem;
+}
 
-  .hero_section .detail-box h2 {
-    font-size: 1rem;
-  }
-
-  .hero_section .detail-box p {
-    font-size: 0.8rem;
-  }
-
-  /* Services Section */
-  .do_section h2 {
-    font-size: 1.3rem;
-  }
-
-  .do_section .box {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .do_section .detail-box h6 {
-    font-size: 0.9rem;
-  }
-
-  .do_section .detail-box p {
-    font-size: 0.75rem;
-  }
-
-  /* How It Works Section */
-  .how_it_works_section .img-box {
-    max-width: 250px;
-  }
-
-  .how_it_works_section .detail-box a {
-    padding: 8px 25px;
-    font-size: 0.8rem;
-  }
+.contact_info_section p {
+  font-size: 0.8rem;
 }
